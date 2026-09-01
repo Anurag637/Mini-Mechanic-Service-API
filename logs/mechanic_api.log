@@ -1,0 +1,30 @@
+INFO 2026-09-01 22:21:22,087 autoreload Watching for file changes with StatReloader
+INFO 2026-09-01 22:21:22,087 autoreload Watching for file changes with StatReloader
+INFO 2026-09-01 22:21:22,087 autoreload Watching for file changes with StatReloader
+INFO 2026-09-01 22:21:27,140 autoreload E:\Ap\mechanic_service_platform\settings.py changed, reloading.
+INFO 2026-09-01 22:21:27,157 autoreload E:\Ap\mechanic_service_platform\settings.py changed, reloading.
+INFO 2026-09-01 22:21:27,166 autoreload E:\Ap\mechanic_service_platform\settings.py changed, reloading.
+INFO 2026-09-01 22:21:27,657 autoreload Watching for file changes with StatReloader
+INFO 2026-09-01 22:21:27,657 autoreload Watching for file changes with StatReloader
+INFO 2026-09-01 22:21:27,707 autoreload Watching for file changes with StatReloader
+INFO 2026-09-01 22:37:55,050 autoreload E:\Ap\manage.py changed, reloading.
+INFO 2026-09-01 22:37:55,786 autoreload E:\Ap\manage.py changed, reloading.
+INFO 2026-09-01 22:37:55,827 autoreload E:\Ap\manage.py changed, reloading.
+INFO 2026-09-01 22:40:19,993 views Mechanic created: Ravi Singh
+INFO 2026-09-01 22:40:20,003 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-01 22:40:20,032 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-01 22:56:11,793 views Mechanic created: Ravi Singh
+INFO 2026-09-01 22:56:11,806 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-01 22:56:11,814 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-01 23:41:54,047 views Mechanic created: Ravi Singh
+INFO 2026-09-01 23:41:54,063 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-01 23:41:54,075 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-02 00:24:47,354 views Mechanic created: Ravi Singh
+INFO 2026-09-02 00:24:47,373 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-02 00:24:47,468 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-02 01:06:04,173 views Mechanic created: Ravi Singh
+INFO 2026-09-02 01:06:04,187 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-02 01:06:04,196 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-02 01:07:47,151 views Mechanic created: Ravi Singh
+INFO 2026-09-02 01:07:47,165 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-02 01:07:47,172 views Mechanic list requested with filters: search=None location=None is_open=None
