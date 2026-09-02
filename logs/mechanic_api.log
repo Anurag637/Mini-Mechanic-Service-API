@@ -28,3 +28,12 @@ INFO 2026-09-02 01:06:04,196 views Mechanic list requested with filters: search=
 INFO 2026-09-02 01:07:47,151 views Mechanic created: Ravi Singh
 INFO 2026-09-02 01:07:47,165 views Service request created for mechanic 1 by Neha Sharma
 INFO 2026-09-02 01:07:47,172 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-02 12:55:57,855 views Mechanic created: Ravi Singh
+INFO 2026-09-02 12:55:57,870 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-02 12:55:57,890 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-02 12:58:35,763 views Mechanic created: Ravi Singh
+INFO 2026-09-02 12:58:35,777 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-02 12:58:35,777 views Mechanic list requested with filters: search=None location=None is_open=None
+INFO 2026-09-02 13:04:42,259 views Mechanic created: Ravi Singh
+INFO 2026-09-02 13:04:42,269 views Service request created for mechanic 1 by Neha Sharma
+INFO 2026-09-02 13:04:42,276 views Mechanic list requested with filters: search=None location=None is_open=None

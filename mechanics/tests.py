@@ -1,8 +1,12 @@
+import os
+from unittest.mock import patch
+
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
 from mechanics.models import Mechanic, ServiceRequest
+from service_platform.settings import get_allowed_hosts, get_csrf_trusted_origins
 
 
 class MechanicAPITests(APITestCase):
@@ -86,3 +90,11 @@ class MechanicAPITests(APITestCase):
         response = self.client.post(reverse('service-request-list'), payload, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn('mechanic_id', response.data)
+
+    @patch.dict(os.environ, {'DEBUG': '0', 'RENDER_EXTERNAL_HOSTNAME': 'mini-mechanic-service-api.onrender.com'}, clear=False)
+    def test_render_hostname_is_in_allowed_hosts(self):
+        self.assertIn('mini-mechanic-service-api.onrender.com', get_allowed_hosts())
+
+    @patch.dict(os.environ, {'DEBUG': '0', 'RENDER_EXTERNAL_HOSTNAME': 'mini-mechanic-service-api.onrender.com'}, clear=False)
+    def test_render_hostname_is_in_csrf_trusted_origins(self):
+        self.assertIn('https://mini-mechanic-service-api.onrender.com', get_csrf_trusted_origins())

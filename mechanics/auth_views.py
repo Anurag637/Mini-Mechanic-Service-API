@@ -1,11 +1,31 @@
 from django.contrib.auth.models import User
-from rest_framework import status
+from drf_spectacular.utils import OpenApiResponse, extend_schema
+from rest_framework import serializers, status
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 
+class RegisterSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+
+class RegisterResponseSerializer(serializers.Serializer):
+    token = serializers.CharField()
+    username = serializers.CharField()
+
+
+@extend_schema(
+    tags=['register'],
+    request=RegisterSerializer,
+    responses={
+        201: RegisterResponseSerializer,
+        400: OpenApiResponse(description='Username and password are required or the user already exists.'),
+    },
+    description='Create a new user account and return an auth token.',
+)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):

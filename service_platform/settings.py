@@ -3,14 +3,36 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+def get_allowed_hosts():
+    debug_mode = os.environ.get('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
+    if debug_mode:
+        return ['*']
+
+    hosts = [host.strip() for host in os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',') if host.strip()]
+    render_host = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+    if render_host:
+        hosts.append(render_host)
+    return hosts or ['localhost', '127.0.0.1', '0.0.0.0']
+
+
+def get_csrf_trusted_origins():
+    origins = []
+    env_origins = os.environ.get('CSRF_TRUSTED_ORIGINS', '')
+    if env_origins:
+        origins.extend(origin.strip() for origin in env_origins.split(',') if origin.strip())
+
+    render_host = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+    if render_host:
+        origins.append(f'https://{render_host}')
+        origins.append(f'https://*.{render_host}')
+    return origins
+
+
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-dev-key-change-me')
 DEBUG = os.environ.get('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
-if DEBUG:
-    ALLOWED_HOSTS = ['*']
-
-if os.environ.get('CSRF_TRUSTED_ORIGINS'):
-    CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS').split(',')
+ALLOWED_HOSTS = get_allowed_hosts()
+CSRF_TRUSTED_ORIGINS = get_csrf_trusted_origins()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
