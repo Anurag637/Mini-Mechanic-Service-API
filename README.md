@@ -29,6 +29,8 @@ A Django REST API for managing mechanics and handling service requests for a mec
 
 ## Setup Instructions
 
+### Local development
+
 1. Clone the project and navigate to the root folder.
 2. Create and activate a virtual environment:
 
@@ -64,12 +66,38 @@ python manage.py runserver
 http://127.0.0.1:8000/api/docs/
 ```
 
+### Render deployment
+
+The app is deployed here:
+
+```text
+https://mini-mechanic-service-api.onrender.com/api/docs/
+```
+
+API base URL:
+
+```text
+https://mini-mechanic-service-api.onrender.com
+```
+
 ### Token Authentication
 
 Create a user and get a token:
 
 ```http
-POST /api/register/
+POST https://mini-mechanic-service-api.onrender.com/api/register/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
+
+Or for local testing:
+
+```http
+POST http://127.0.0.1:8000/api/register/
 Content-Type: application/json
 
 {
@@ -111,6 +139,12 @@ http://localhost:8000/api/docs/
 
 ## Available Endpoints
 
+Use the live Render base URL:
+
+```text
+https://mini-mechanic-service-api.onrender.com
+```
+
 ### Mechanics
 - `GET /api/mechanics/` — list mechanics
 - `GET /api/mechanics/<id>/` — fetch mechanic by ID
@@ -122,6 +156,9 @@ http://localhost:8000/api/docs/
 ### Service Requests
 - `GET /api/service-requests/` — list service requests
 - `POST /api/service-requests/` — create service request
+
+### Authentication
+- `POST /api/register/` — create a user and receive an auth token
 
 ### API Schema
 - `GET /api/schema/` — OpenAPI schema
